@@ -101,3 +101,5 @@ export class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
     );
   }
 }
+
+export default TodoApp;

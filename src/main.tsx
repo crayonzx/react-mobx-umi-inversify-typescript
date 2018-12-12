@@ -1,11 +1,10 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { configure } from 'mobx';
 import { Provider } from 'mobx-react';
-import { createBrowserHistory } from 'history';
+import { History } from 'history';
 import { TodoModel } from '~/models';
 import { createStores } from '~/stores';
-import { App } from './App';
+import { Root } from '~/containers/Root';
 
 // enable MobX strict mode
 configure({
@@ -21,13 +20,19 @@ const defaultTodos = [
 ];
 
 // prepare MobX stores
-const history = createBrowserHistory();
-const rootStore = createStores(history, defaultTodos);
+const rootStore = createStores(window.g_history, defaultTodos);
 
 // render react DOM
-ReactDOM.render(
-  <Provider {...rootStore}>
-    <App history={history} />
-  </Provider>,
-  document.getElementById('root')
-);
+export default (({ children }) => {
+  return (
+    <Provider {...rootStore}>
+      <Root>{children}</Root>
+    </Provider>
+  );
+}) as React.SFC;
+
+declare global {
+  interface Window {
+    g_history: History;
+  }
+}
