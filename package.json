@@ -15,7 +15,8 @@
     "react",
     "mobx",
     "typescript",
-    "umi"
+    "umi",
+    "inversify"
   ],
   "devDependencies": {
     "@types/classnames": "^2.2.6",
@@ -32,11 +33,15 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "inversify": "^5.0.1",
+    "inversify-binding-decorators": "3",
+    "inversify-inject-decorators": "^3.1.0",
     "mobx": "^5.7.0",
     "mobx-react": "^5.4.2",
     "mobx-react-router": "^4.0.5",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-router": "^4.3.1"
+    "react-router": "^4.3.1",
+    "reflect-metadata": "^0.1.12"
   }
 }

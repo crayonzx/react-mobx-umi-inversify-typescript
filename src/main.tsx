@@ -1,34 +1,31 @@
 import * as React from 'react';
 import { configure } from 'mobx';
-import { Provider } from 'mobx-react';
 import { History } from 'history';
 import { TodoModel } from '~/models';
-import { createStores } from '~/stores';
+import { container, TYPES } from '~/stores';
 import { Root } from '~/containers/Root';
 
 // enable MobX strict mode
 configure({
-  // 'observed' is recommanded in mobx docs
+  // 'observed' or true is recommanded in mobx docs
   // see https://github.com/mobxjs/mobx/blob/gh-pages/docs/refguide/api.md#enforceactions
-  enforceActions: 'strict'
+  enforceActions: 'always' // = 'strict'
 });
 
 // default fixtures for TodoStore
-const defaultTodos = [
-  new TodoModel('Use Mobx'),
-  new TodoModel('Use React', true)
-];
+container
+  .bind<any>(TYPES.DefaultTodos)
+  .toConstantValue([
+    new TodoModel('Use Mobx'),
+    new TodoModel('Use React', true)
+  ]);
 
-// prepare MobX stores
-const rootStore = createStores(window.g_history, defaultTodos);
+// global history for RouterStore
+container.bind<History>(TYPES.History).toConstantValue(window.g_history);
 
 // render react DOM
 export default (({ children }) => {
-  return (
-    <Provider {...rootStore}>
-      <Root>{children}</Root>
-    </Provider>
-  );
+  return <Root>{children}</Root>;
 }) as React.SFC;
 
 declare global {

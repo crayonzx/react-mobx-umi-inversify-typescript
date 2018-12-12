@@ -3,9 +3,18 @@ import {
   RouterStore as BaseRouterStore,
   syncHistoryWithStore
 } from 'mobx-react-router';
+import { injectable } from 'inversify';
+import { inject, provide, TYPES } from './ioc';
 
-export class RouterStore extends BaseRouterStore {
-  constructor(history?: History) {
+const injectableMobxRouterStore: typeof BaseRouterStore = injectable()(
+  BaseRouterStore
+);
+
+@provide(TYPES.RouterStore)
+export class RouterStore extends injectableMobxRouterStore {
+  public history: ReturnType<typeof syncHistoryWithStore>;
+
+  constructor(@inject(TYPES.History) history?: History) {
     super();
     if (history) {
       this.history = syncHistoryWithStore(history, this);

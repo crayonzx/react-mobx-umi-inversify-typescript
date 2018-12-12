@@ -1,8 +1,10 @@
 import { observable, computed, action, runInAction } from 'mobx';
 import { TodoModel } from '~/models';
+import { inject, provide, TYPES } from './ioc';
 
+@provide(TYPES.TodoStore)
 export class TodoStore {
-  constructor(fixtures: TodoModel[]) {
+  constructor(@inject(TYPES.DefaultTodos) fixtures: TodoModel[]) {
     runInAction(() => {
       this.todos = fixtures;
     });

@@ -1,3 +1,3 @@
-export * from './TodoStore';
+export * from './ioc';
 export * from './RouterStore';
-export * from './createStore';
+export * from './TodoStore';
