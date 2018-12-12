@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "module": "es6",
     "moduleResolution": "node",
@@ -13,6 +13,9 @@
     "noUnusedLocals": true,
     "removeComments": true,
     "strictNullChecks": false,
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "outDir": "build",
     "lib": ["es6", "es7", "dom"],
     "baseUrl": "src",
