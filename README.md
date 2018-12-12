@@ -2,7 +2,7 @@
 
 A bare minimum react-mobx-webpack-typescript boilerplate with TodoMVC example.
 
-Note that this project does not include **Server-Side Rendering**,  **Testing Frameworks** and other stuffs that makes the package unnecessarily complicated.
+Note that this project does not include **Server-Side Rendering**, **Testing Frameworks** and other stuffs that makes the package unnecessarily complicated.
 
 Ideal for creating React apps from the scratch.
 
@@ -18,8 +18,13 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 - [x] [Mobx React Router](https://github.com/alisd23/mobx-react-router/)
 - [x] [Mobx React Devtools](https://github.com/mobxjs/mobx-react-devtools)
 - [x] [TodoMVC example](http://todomvc.com)
+- [x] [InversifyJS](https://github.com/inversify/InversifyJS)
 
 ### Build tools
+
+- [x] [umi](https://github.com/umijs/umi)
+
+#### Deleted
 
 - [x] [Webpack](https://webpack.github.io) 4
   - [x] [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
@@ -31,7 +36,6 @@ See also: [react-redux-typescript-boilerplate](https://github.com/rokoroku/react
 - [x] [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 - [x] [ExtractText Plugin](https://github.com/webpack/extract-text-webpack-plugin)
 - [x] [HTML Webpack Plugin](https://github.com/ampedandwired/html-webpack-plugin)
-
 
 ## Setup
 

@@ -1,8 +1,8 @@
 {
-  "name": "react-mobx-umi-ts-demo",
+  "name": "react-mobx-inversify-umi-ts-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "A frontend demo with React, MobX, UmiJS and Typescript",
+  "description": "A frontend demo with React, MobX, inversify, UmiJS and Typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
