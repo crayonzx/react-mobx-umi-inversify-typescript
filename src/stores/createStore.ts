@@ -1,8 +1,8 @@
 import { History } from 'history';
-import { TodoModel } from 'app/models';
+import { TodoModel } from '~/models';
 import { TodoStore } from './TodoStore';
 import { RouterStore } from './RouterStore';
-import { STORE_TODO, STORE_ROUTER } from 'app/constants';
+import { STORE_TODO, STORE_ROUTER } from '~/constants';
 
 export function createStores(history: History, defaultTodos?: TodoModel[]) {
   const todoStore = new TodoStore(defaultTodos);

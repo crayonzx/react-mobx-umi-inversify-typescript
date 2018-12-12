@@ -3,9 +3,9 @@ import * as ReactDOM from 'react-dom';
 import { configure } from 'mobx';
 import { Provider } from 'mobx-react';
 import { createBrowserHistory } from 'history';
-import { TodoModel } from 'app/models';
-import { createStores } from 'app/stores';
-import { App } from 'app';
+import { TodoModel } from '~/models';
+import { createStores } from '~/stores';
+import { App } from './App';
 
 // enable MobX strict mode
 configure({
