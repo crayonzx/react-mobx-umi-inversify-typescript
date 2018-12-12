@@ -1,9 +1,11 @@
-import { observable, computed, action } from 'mobx';
+import { observable, computed, action, runInAction } from 'mobx';
 import { TodoModel } from 'app/models';
 
 export class TodoStore {
   constructor(fixtures: TodoModel[]) {
-    this.todos = fixtures;
+    runInAction(() => {
+      this.todos = fixtures;
+    });
   }
 
   @observable public todos: Array<TodoModel>;

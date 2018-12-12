@@ -29,7 +29,7 @@ module.exports = {
     // (jsnext:main directs not usually distributable es6 format, but es6 sources)
     mainFields: ['module', 'browser', 'main'],
     alias: {
-      'app': path.resolve(__dirname, 'src/app/')
+      app: path.resolve(__dirname, 'src/app/')
     }
   },
   module: {
@@ -39,7 +39,15 @@ module.exports = {
         test: /\.tsx?$/,
         use: isProduction
           ? 'ts-loader'
-          : ['babel-loader?plugins=react-hot-loader/babel', 'ts-loader']
+          : [
+              {
+                loader: 'babel-loader',
+                query: {
+                  plugins: ['react-hot-loader/babel']
+                }
+              },
+              'ts-loader'
+            ]
       },
       // css
       {

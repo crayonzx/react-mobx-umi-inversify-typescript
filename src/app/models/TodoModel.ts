@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, runInAction } from 'mobx';
 
 export class TodoModel {
   readonly id: number;
@@ -7,8 +7,10 @@ export class TodoModel {
 
   constructor(text: string, completed: boolean = false) {
     this.id = TodoModel.generateId();
-    this.text = text;
-    this.completed = completed;
+    runInAction(() => {
+      this.text = text;
+      this.completed = completed;
+    });
   }
 
   static nextId = 1;
